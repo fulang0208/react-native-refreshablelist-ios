@@ -1,5 +1,5 @@
 # react-native-refreshablelist-ios
-a pull down to refresh list view and pull up to load more for react native component
+ListView with pulldown-to-refresh and pullup-to-loadmore for iOS React-Native component
 
 ![](https://github.com/fulang0208/react-native-refreshablelist-ios/raw/master/Captures/example.gif)
 
