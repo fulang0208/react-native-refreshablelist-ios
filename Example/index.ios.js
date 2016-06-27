@@ -20,17 +20,22 @@
  class Example extends Component {
    render() {
      return (
- 			<RefreshableList
-         style={styles.list}
-         loadData={this.loadData}
-         loadmore={this.loadmore}/>
+       <View style={{flex:1}}>
+         <View style={styles.header}>
+           <Text style={styles.title}>Example</Text>
+         </View>
+         <RefreshableList
+           style={styles.list}
+           loadData={this.loadData}
+           loadmore={this.loadmore}/>
+      </View>
  		);
    }
 
    loadData(resolve:Function, reject:Function) {
      function timeout () {
        times = 0;
-       resolve(["111","222","333","444","555","666","777"]);
+       resolve(["111","222","333","444","555","666","777","111","222","333","444","555","666","777"]);
      }
      setTimeout(timeout, 2000);
    }
@@ -50,6 +55,20 @@
      justifyContent: 'center',
      alignItems: 'center',
      backgroundColor: '#F5FCFF',
+   },
+   header: {
+     top: 20,
+     left: 0,
+     right: 0,
+     position: 'absolute',
+     height: 44,
+     backgroundColor: 'white'
+   },
+   title: {
+     justifyContent: 'center',
+     alignSelf: 'center',
+     fontSize: 17,
+     marginTop: 12,
    },
    list: {
      marginTop: 64,
