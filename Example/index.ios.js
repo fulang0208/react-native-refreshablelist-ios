@@ -27,9 +27,18 @@
          <RefreshableList
            style={styles.list}
            loadData={this.loadData}
-           loadmore={this.loadmore}/>
+           loadmore={this.loadmore}
+           renderRow={this.renderRow}/>
       </View>
  		);
+   }
+
+   renderRow(rowData:string) {
+     return (
+       <View style={{height:80, backgroundColor:'#e9e9e9'}}>
+         <Text style={{flex:1}}>{rowData}</Text>
+       </View>
+     );
    }
 
    loadData(resolve:Function, reject:Function) {

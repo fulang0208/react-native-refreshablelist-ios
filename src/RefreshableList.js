@@ -64,14 +64,7 @@ export default class RefreshableList extends Component {
   componentDidMount() {
     this.handleRefresh();
   }
-
-  renderRow(rowData:string) {
-    return (
-      <View style={{height:80, backgroundColor:'#e9e9e9'}}>
-        <Text style={{flex:1}}>{rowData}</Text>
-      </View>
-    );
-  }
+  
   _onScroll = (e:Object)=>{
     let offsetY = e.nativeEvent.contentOffset.y;
     if (offsetY > 0) {
@@ -272,7 +265,6 @@ export default class RefreshableList extends Component {
           onLayout={this._onLayout}
           style={styles.list}
           dataSource={this.state.dataSource}
-          renderRow={this.renderRow}
           onScroll={this._onScroll}
           scrollEventThrottle={32}
           decelerationRate={0.8}
