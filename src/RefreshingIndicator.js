@@ -4,12 +4,11 @@ import React, {Component, PropTypes, createElement, isValidElement} from 'react'
 import ReactNative, {
   View,
   Text,
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   ProgressBarAndroid,
   StyleSheet,
   Platform,
 } from 'react-native';
-// '↑↓'
 export default class RefreshingIndicator extends Component {
 
   static propTypes = {
@@ -31,7 +30,7 @@ export default class RefreshingIndicator extends Component {
   static defaultProps = {
     pullingIndicator: <Text>↑</Text>,
     holdingIndicator: <Text>↓</Text>,
-    refreshingIndicator: Platform.OS === 'ios' ? ActivityIndicatorIOS : ProgressBarAndroid,
+    refreshingIndicator: ActivityIndicator,
     pullingPrompt: '上拉刷新',
     holdingPrompt: '松手刷新',
     refreshingPrompt: '正在刷新',
@@ -48,9 +47,6 @@ export default class RefreshingIndicator extends Component {
 
   renderPrompt() {
     var prompt = '';
-
-    // console.log("isRefreshing:", this.props.isRefreshing);
-    // console.log("isWaitingForRelease:", this.props.isWaitingForRelease);
 
     if (this.props.isNoMore) {
       prompt = this.props.noMorePromt;

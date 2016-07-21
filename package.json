@@ -1,6 +1,6 @@
 {
   "name": "react-native-refreshablelist-ios",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "a pull down to refresh listview or pull up to load more for react native",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
   "homepage": "https://github.com/fulang0208/react-native-refreshablelist-ios#readme",
   "devDependencies": {
     "react": "^15.0.2",
-    "react-native": "^0.26.0"
+    "react-native": "^0.28.0"
   }
 }
